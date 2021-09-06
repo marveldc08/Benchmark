@@ -145,8 +145,10 @@ function loopfor(){
 };
 
 function activeloopfor(){
+    var  input= document.getElementById('inputActiveFor').value;
+
     const startTime = new Date;
-    for (let iteration = 1; iteration <= 30; iteration++) {
+    for (let iteration = 1; iteration <= input; iteration++) {
         for (let index = 0; index < arrayOfNumbers.length; index++) {
             console.log("index = " + arrayOfNumbers[index]);
         }
@@ -181,6 +183,8 @@ function activeloopfor(){
 }); */
 
 function loopforEach(){
+    var  input= document.getElementById('inputActiveFor').value;
+
     const startTime = new Date();
     arrayOfNumbers.forEach(element => {
     console.log("index = " + element);
@@ -190,7 +194,7 @@ function loopforEach(){
 
     var tbody = document.getElementById("tbodyforEach");
         let row = `<tr>` +
-                        `<td>`+ `<b>`+ result + " milliseconds"+`</td>`+
+                        `<td>`+ `<b>`+ result +`</td>`+
                         `<td>`+startTime +`</td>`+
                         `<td>`+endTime +`</td>`+
                  `</tr>`;
@@ -201,8 +205,9 @@ function loopforEach(){
 };
 
 function activeloopforEach() {
-   
-    for (let iteration = 1; iteration <= 30; iteration++) {
+    var  input= document.getElementById('inputActiveforEach').value;
+
+    for (let iteration = 1; iteration <= input; iteration++) {
         const startTime = new Date();
         arrayOfNumbers.forEach(element => {
            console.log("index = " + element);

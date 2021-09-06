@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Number Validator</title>
+    <title>Benchmark</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="for_forEach_Benchmark.css">
 </head>
 <body>
     <div class="container">
@@ -14,57 +14,81 @@
         <h5 >
             <i id='other-heading'>Benchmark for <b>"for"</b> and <b>"ForEach"</b> loop</i>
         </h5>       
-            <table class="table table-responsive-sm table-striped">
-                <thead class="thead-dark text-white">
-                    <tr>
-                        <th>Run Time</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyfor"></tbody>
-            </table>
-            <button class="btn btn-primary mb-2" onclick="loopfor()">For Loop</button>
+       
+           <div class="container mb-5 row">
+               <div class="col-md-5">
 
-            <table class="table table-responsive-sm table-striped">
-                <thead class="thead-dark text-white">
-                    <tr>
-                        <th>Run Time</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyforEach"></tbody>
-            </table>
-            <button class="btn btn-primary mb-2" onclick="loopforEach()">ForEach Loop</button>
-        
-            <table class="table table-responsive-sm table-striped">
-                <thead class="thead-dark text-white">
-                    <tr>
-                        <th>Iteration</th>
-                        <th>Run Time</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                    </tr>
-                </thead>
-                <tbody id="activefortable"></tbody>
-            </table>
-            <button class="btn btn-primary mb-2" onclick="activeloopfor()">active For Loop</button>
+                <label for="inputActiveFor" >input number of iterations </label>
+                <input type="text" class="form-control mb-2" id="inputActiveFor">
 
-            <table class="table table-responsive-sm table-striped">
-                <thead class="thead-dark text-white">
-                    <tr>
-                        <th>Iteration</th>
-                        <th>Run Time</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                    </tr>
-                </thead>
-                <tbody id="activeforEachtable"></tbody>
-            </table>
-            <button class="btn btn-primary mb-2" onclick="activeloopforEach()">active ForEach Loop</button>
+                <table class="table table-responsive-sm table-striped">
+                    <thead class="thead-dark text-white">
+                        <tr>
+                            <th>Iteration</th>
+                            <th>Run Time</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activefortable"></tbody>
+                </table>
+                <button class="btn btn-primary mb-2" onclick="activeloopfor()">active For Loop</button>
+               </div>
 
+               <div class="col-md-2">
+               </div>
 
+               <div class="col-md-5">
+                <label for="inputActiveforEach">input number of iterations </label>
+                <input type="text" class="form-control mb-2" id="inputActiveforEach">
+
+                <table class="table table-responsive-sm table-striped">
+                    <thead class="thead-dark text-white">
+                        <tr>
+                            <th>Iteration</th>
+                            <th>Run Time</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activeforEachtable"></tbody>
+                </table>
+                <button class="btn btn-primary mb-2" onclick="activeloopforEach()">active ForEach Loop</button>
+               </div>
+           </div>
+
+           <div class="container row">
+               <div class="col-md-5">
+                <table class="table table-responsive-sm table-striped">
+                    <thead class="thead-dark text-white">
+                        <tr>
+                            <th>Run Time</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyfor"></tbody>
+                </table>
+                <button class="btn btn-primary mb-2" onclick="loopfor()">For Loop</button>
+               </div>
+
+               <div class="col-md-2">
+               </div>
+
+               <div class="col-md-5">
+                <table class="table table-responsive-sm table-striped">
+                    <thead class="thead-dark text-white">
+                        <tr>
+                            <th>Run Time</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyforEach"></tbody>
+                </table>
+                <button class="btn btn-primary mb-2" onclick="loopforEach()">ForEach Loop</button>
+               </div>
+           </div>
     </div>
     
 
