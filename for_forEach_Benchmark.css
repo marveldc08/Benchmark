@@ -1,7 +1,20 @@
+body{
+    background-image: url("C:/Users/Emeka Chinye/Documents/Visual Studio Code/Projects/Repo/Benchmark/images/forest.jpg");
+    background-blend-mode: soft-light;
+    background-color: rgb(31, 29, 29);
+}
 #main-heading{
     background-color: skyblue;
 }
 .row{
     background-color: rgb(233, 238, 243);
-    padding: 10px;
+    padding: 30px;
+}
+.main{
+    border-radius: 15px ;
+    background-color: white;
+    
+}
+footer{
+    background-color: black;
 }

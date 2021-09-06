@@ -122,6 +122,113 @@ var arrayOfNumbers = [
 
 ];
 console.log(arrayOfNumbers);
+
+//function for active for Loop...
+function activeloopfor(){
+    let input= document.getElementById('inputActiveFor').value;
+    var arrayOfForRuntime = [];
+
+    for (let iteration = 1; iteration <= input; iteration++) {
+        const startTime = new Date;
+        for (let index = 0; index < arrayOfNumbers.length; index++) {
+            console.log("index = " + arrayOfNumbers[index]);
+            
+        }
+        const endTime = new Date;
+        const result = endTime -  startTime ;
+        arrayOfForRuntime.push(result);
+
+        
+       /*  var  position;
+        if (iteration === 1) {
+          position = "st";
+        }else if (iteration === 2) {
+            position = "nd";
+        }else{
+            position = "th";
+        } */
+        var tbody = document.getElementById("activefortable");
+        let row = `<tr>` +
+                        `<td>` +"Iteration "+ iteration+`</td>`+
+                        `<td>`+ `<b>`+result + " milliseconds"+`</td>`+
+                 `</tr>`;
+        tbody.innerHTML += row;
+
+        var reducer = arrayOfForRuntime.reduce((currentValue, nextValue) => currentValue + nextValue, 0) ;
+
+        let meanValue =  reducer / input;
+        document.getElementById('avarageFor').innerHTML = "Mean: " + meanValue + " milliseconds";
+
+        let heighestMillsec = Math.max(...arrayOfForRuntime);
+        document.getElementById("millsecMax").innerHTML= "Maximum: " + heighestMillsec + " milliseconds";
+        
+        let lowestMillsec = Math.min(...arrayOfForRuntime);
+        document.getElementById("millsecMin").innerHTML= "Minimum: " + lowestMillsec + " milliseconds";
+
+
+        console.log("The code started at " + startTime+ " and ended at "+ endTime);
+        console.log("It took "+ result + " milliseconds to load.");
+        console.log(arrayOfForRuntime);
+        
+    }
+    
+};
+/* arrayOfNumbers.forEach((element) => {
+    console.log(element);
+}); */
+
+
+//Function for the Active forEach Loop.. 
+function activeloopforEach() {
+    var  input= document.getElementById('inputActiveforEach').value;
+    var arrayOfForEachRuntime = [];
+
+    for (let iteration = 1; iteration <= input; iteration++) {
+        const startTime = new Date();
+        arrayOfNumbers.forEach(element => {
+           console.log("index = " + element);
+
+        });
+        const endTime = new Date();
+        const result =  endTime - startTime;
+
+        arrayOfForEachRuntime.push(result)
+
+        /* var  position;
+        if (iteration === 1) {
+          position = "st";
+        }else if (iteration === 2) {
+            position = "nd";
+        }else{
+            position = "th";
+        } */
+        var tbody = document.getElementById("activeforEachtable");
+        let row = `<tr>` +
+                        `<td>` +"Iteration "+ iteration+`</td>`+
+                        `<td>`+ `<b>` +result + " milliseconds"+`</td>`+
+                 `</tr>`;
+        tbody.innerHTML += row;
+
+        var reducer = arrayOfForEachRuntime.reduce((currentValue, nextValue) => currentValue + nextValue, 0) ;
+
+        let meanValue =  reducer / input;
+        document.getElementById('avarageForEach').innerHTML = "Mean: " + meanValue + " milliseconds";
+
+        let heighestMillsec = Math.max(...arrayOfForEachRuntime);
+        document.getElementById("millsecMax2").innerHTML= "Maximum: " + heighestMillsec + " milliseconds";
+        
+        let lowestMillsec = Math.min(...arrayOfForEachRuntime);
+        document.getElementById("millsecMin2").innerHTML= "Minimum: " + lowestMillsec + " milliseconds";
+
+
+        console.log("The code started at " + startTime+ "and ended at "+ endTime);
+        console.log("It took "+ result + " milliseconds to load.");
+        console.log(arrayOfForEachRuntime);
+        
+    }
+}
+
+//function for the for Loop 
 function loopfor(){
     const startTime = new Date();
     
@@ -144,46 +251,8 @@ function loopfor(){
     
 };
 
-function activeloopfor(){
-    var  input= document.getElementById('inputActiveFor').value;
-
-    const startTime = new Date;
-    for (let iteration = 1; iteration <= input; iteration++) {
-        for (let index = 0; index < arrayOfNumbers.length; index++) {
-            console.log("index = " + arrayOfNumbers[index]);
-        }
-        const endTime = new Date;
-        const result = endTime -  startTime ;
-        
-        var  position;
-        if (iteration === 1) {
-          position = "st";
-        }else if (iteration === 2) {
-            position = "nd";
-        }else{
-            position = "th";
-        }
-        var tbody = document.getElementById("activefortable");
-        let row = `<tr>` +
-                        `<td>`+ iteration +position+ " Iteration"+ `</td>`+
-                        `<td>`+ `<b>`+result + " milliseconds"+`</td>`+
-                        `<td>`+startTime +`</td>`+
-                        `<td>`+endTime +`</td>`+
-                 `</tr>`;
-        tbody.innerHTML += row;
-
-        console.log("The code started at " + startTime+ "ad ended at "+ endTime);
-        console.log("It took "+ result + " milliseconds to load.");
-        
-    }
-    
-};
-/* arrayOfNumbers.forEach((element) => {
-    console.log(element);
-}); */
-
+//function for the forEach Loop...
 function loopforEach(){
-    var  input= document.getElementById('inputActiveFor').value;
 
     const startTime = new Date();
     arrayOfNumbers.forEach(element => {
@@ -194,7 +263,7 @@ function loopforEach(){
 
     var tbody = document.getElementById("tbodyforEach");
         let row = `<tr>` +
-                        `<td>`+ `<b>`+ result +`</td>`+
+                        `<td>`+ `<b>`+ result + " milliseconds" +`</td>`+
                         `<td>`+startTime +`</td>`+
                         `<td>`+endTime +`</td>`+
                  `</tr>`;
@@ -204,37 +273,5 @@ function loopforEach(){
     console.log("It took "+ result + " milliseconds to load.");
 };
 
-function activeloopforEach() {
-    var  input= document.getElementById('inputActiveforEach').value;
 
-    for (let iteration = 1; iteration <= input; iteration++) {
-        const startTime = new Date();
-        arrayOfNumbers.forEach(element => {
-           console.log("index = " + element);
-        });
-        const endTime = new Date();
-        const result =  endTime - startTime;
-
-        var  position;
-        if (iteration === 1) {
-          position = "st";
-        }else if (iteration === 2) {
-            position = "nd";
-        }else{
-            position = "th";
-        }
-        var tbody = document.getElementById("activeforEachtable");
-        let row = `<tr>` +
-                        `<td>`+ iteration + position+ " Iteration"+ `</td>`+
-                        `<td>`+ `<b>` +result + " milliseconds"+`</td>`+
-                        `<td>`+startTime +`</td>`+
-                        `<td>`+endTime +`</td>`+
-                 `</tr>`;
-        tbody.innerHTML += row;
-
-        console.log("The code started at " + startTime+ "and ended at "+ endTime);
-        console.log("It took "+ result + " milliseconds to load.");
-        
-    }
-}
 
