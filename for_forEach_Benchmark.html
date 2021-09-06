@@ -9,35 +9,37 @@
     <link rel="stylesheet" href="for_forEach_Benchmark.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-4 main">
         <h1 class="display-4" id="main-heading">Benchmark</h1>
         <h5 >
             <i id='other-heading'>Benchmark for <b>"for"</b> and <b>"ForEach"</b> loop</i>
         </h5>       
        
-           <div class="container mb-5 row">
+           <div class="mb-5 row">
+               <!--Active for Loop starts-->
                <div class="col-md-5">
-
                 <label for="inputActiveFor" >input number of iterations </label>
                 <input type="text" class="form-control mb-2" id="inputActiveFor">
-
                 <table class="table table-responsive-sm table-striped">
                     <thead class="thead-dark text-white">
                         <tr>
                             <th>Iteration</th>
-                            <th>Run Time</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
+                            <th>Run Time (ms)</th>
                         </tr>
                     </thead>
                     <tbody id="activefortable"></tbody>
                 </table>
+                <p id="avarageFor"></p>
+                <p id="millsecMax"></p>
+                <p id="millsecMin"></p>
                 <button class="btn btn-primary mb-2" onclick="activeloopfor()">active For Loop</button>
                </div>
+               <!--Active for Loop ends-->
 
                <div class="col-md-2">
                </div>
 
+               <!--Active forEach Loop starts-->
                <div class="col-md-5">
                 <label for="inputActiveforEach">input number of iterations </label>
                 <input type="text" class="form-control mb-2" id="inputActiveforEach">
@@ -46,18 +48,23 @@
                     <thead class="thead-dark text-white">
                         <tr>
                             <th>Iteration</th>
-                            <th>Run Time</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
+                            <th>Run Time (ms)</th>
                         </tr>
                     </thead>
                     <tbody id="activeforEachtable"></tbody>
                 </table>
+
+                <p id="avarageForEach"></p>
+                <p id="millsecMax2"></p>
+                <p id="millsecMin2"></p>
+
                 <button class="btn btn-primary mb-2" onclick="activeloopforEach()">active ForEach Loop</button>
                </div>
+               <!--Active forEach Loop ends-->
            </div>
 
-           <div class="container row">
+           <div class="row">
+               <!--for loop starts-->
                <div class="col-md-5">
                 <table class="table table-responsive-sm table-striped">
                     <thead class="thead-dark text-white">
@@ -71,10 +78,12 @@
                 </table>
                 <button class="btn btn-primary mb-2" onclick="loopfor()">For Loop</button>
                </div>
+               <!--for loop starts-->
 
                <div class="col-md-2">
                </div>
 
+               <!--forEach loop starts-->
                <div class="col-md-5">
                 <table class="table table-responsive-sm table-striped">
                     <thead class="thead-dark text-white">
@@ -88,8 +97,15 @@
                 </table>
                 <button class="btn btn-primary mb-2" onclick="loopforEach()">ForEach Loop</button>
                </div>
+               <!--forEach loop ends-->
+           </div>
+           <div>
+               <p>
+                   <b>Note:</b> This is to test the Iteration speed of the "for" and "forEach" Loops. Both loops run in milliseconds, they both have their uses and importance and so, when testing/comparing, they must be under the same condition.
+               </p>
            </div>
     </div>
+    
     
 
     <script src="for_forEach_Benchmark.js"></script>
